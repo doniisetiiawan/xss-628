@@ -4,6 +4,11 @@ import "./Home.css";
 
 class Home extends PureComponent {
   render() {
+    const buttonStyle = {
+      backgroundColor: "gray",
+      border: "1px solid black"
+    };
+
     return (
       <div className="Home">
         <h1>Welcome to Codejobs</h1>
@@ -14,14 +19,7 @@ class Home extends PureComponent {
         </p>
 
         <p>
-          <button
-            style={{
-              backgroundColor: "gray",
-              border: "1px solid black"
-            }}
-          >
-            Click me!
-          </button>
+          <button style={buttonStyle}>Click me!</button>
         </p>
       </div>
     );
