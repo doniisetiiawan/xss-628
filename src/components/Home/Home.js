@@ -3,6 +3,14 @@ import React, { PureComponent } from "react";
 import "./Home.css";
 
 class Home extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "Carlos"
+    };
+  }
+
   render() {
     const buttonStyle = {
       backgroundColor: "gray",
@@ -17,6 +25,7 @@ class Home extends PureComponent {
           want to learn more you can visit our Youtube Channel at
           <a href="http://youtube.com/codejobs"> Codejobs</a>.
         </p>
+        <p>Hi my name is {this.state.name}</p>
 
         <p>
           <button style={buttonStyle}>Click me!</button>
