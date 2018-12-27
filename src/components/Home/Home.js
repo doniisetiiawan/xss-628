@@ -11,18 +11,19 @@ class Home extends PureComponent {
     };
   }
 
-  render() {
-    const buttonStyle = {
-      backgroundColor: "gray",
-      border: "1px solid black"
-    };
-
+  componentDidMount() {
     setTimeout(() => {
       this.setState({
         name: "Cristina"
       });
     }, 1000);
-    console.log("Name:", this.state.name);
+  }
+
+  render() {
+    const buttonStyle = {
+      backgroundColor: "gray",
+      border: "1px solid black"
+    };
 
     return (
       <div className="Home">
