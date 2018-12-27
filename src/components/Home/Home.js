@@ -17,6 +17,13 @@ class Home extends PureComponent {
       border: "1px solid black"
     };
 
+    setTimeout(() => {
+      this.setState({
+        name: "Cristina"
+      });
+    }, 1000);
+    console.log("Name:", this.state.name);
+
     return (
       <div className="Home">
         <h1>Welcome to Codejobs</h1>
