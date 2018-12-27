@@ -1,5 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Header from "../shared/components/layout/Header";
+import Content from "../shared/components/layout/Content";
+import Footer from "../shared/components/layout/Footer";
 
 import Home from "./Home/Home";
 import "./App.css";
@@ -9,7 +11,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header title="Welcome to Codejobs" />
-        <Home />
+        <Content>
+          <Home />
+        </Content>
+        <Footer />
       </div>
     );
   }
