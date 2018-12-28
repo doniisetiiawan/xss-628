@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import serialize from "serialize-javascript";
 
 const response = [
   {
@@ -22,7 +23,8 @@ const response = [
   }
 ];
 
-const initialState = JSON.stringify(response);
+const initialState = serialize(response);
+console.log(initialState);
 
 const removeXSSAttacks = html => {
   const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
