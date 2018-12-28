@@ -33,7 +33,7 @@ class Xss extends Component {
         {posts.map((post, key) => (
           <div key={key}>
             <h2>{post.title}</h2>
-            <p>{post.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         ))}
       </div>
