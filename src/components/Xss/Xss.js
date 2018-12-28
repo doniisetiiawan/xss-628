@@ -24,6 +24,20 @@ const response = [
 
 const initialState = JSON.stringify(response);
 
+const removeXSSAttacks = html => {
+  const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+
+  while (SCRIPT_REGEX.test(html)) {
+    html = html.replace(SCRIPT_REGEX, "");
+  }
+
+  html = html.replace(/ on\w+="[^"]*"/g, "");
+
+  return {
+    __html: html
+  };
+};
+
 class Xss extends Component {
   render() {
     const posts = JSON.parse(initialState);
@@ -33,7 +47,7 @@ class Xss extends Component {
         {posts.map((post, key) => (
           <div key={key}>
             <h2>{post.title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: post.content }} />
+            <p dangerouslySetInnerHTML={removeXSSAttacks(post.content)} />
           </div>
         ))}
       </div>
